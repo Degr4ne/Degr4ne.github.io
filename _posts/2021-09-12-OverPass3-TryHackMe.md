@@ -7,7 +7,7 @@ img_path: /assets/img/THM/OverPass3/
 image: 
   path: 00-OverPass3.png
 ---
-Hello guys, today we are gonna do a walkthrough on [OverPass 3](https://tryhackme.com/room/overpass3hosting) the box from TryHackMe, this box was rated medium. Let’s jump in.
+Hello guys, today we are gonna do a walkthrough on [OverPass 3](https://tryhackme.com/room/overpass3hosting) the box from TryHackMe, this box was rated medium.
 
 # Recon
 ## Nmap Scan
@@ -52,7 +52,7 @@ Looking at the source code of the web page, we find a comment but this isn't hel
 
 ![03-sourcecode](03-sourcecode.png)
 
-Enumerating with `gobuster`we found `/backups` directory that looks interesting.
+Enumerating with `gobuster` we found `/backups` directory that looks interesting.
 ```console
 $ gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.40.242/ -t 50 -o normal-fuzz
 ```
@@ -65,7 +65,7 @@ Going to `/backups` directory we see that it contains a backup.zip.
 
 Once downloaded the ZIP file, we can extract its content using `7z x backup.zip`.
 
-We get 2 files, `CustomerDetails.xlsx.gpg` that is a xlsx file encrypted with gpg and the other a private key used to decrypte the file. For know more about how gpg works you can search [here](https://www.gnupg.ordg/gph/en/manual.html).
+We get 2 files, `CustomerDetails.xlsx.gpg` that is a xlsx file encrypted with gpg and the other a private key used to decrypte the file. To know more about how gpg works you can search [here](https://www.gnupg.ordg/gph/en/manual.html).
 
 ![06-gpg](06-gpg.png)
 
@@ -87,7 +87,7 @@ With the idea of upload a reverse shell I copied into my local directory a php r
 
 ![09-phpshell](09-phpshell.png)
 
-First I uploaded the file in FTP service using `put` command , Second I started a netcat  listener and for last I tried to access that reverse shell  from the website.
+First I uploaded the file in FTP service using `put` command, Second I started a netcat listener and then I tried to access that reverse shell from the website.
 
 ![10-RevShell](10-RevShell.png)
 
@@ -116,7 +116,7 @@ A: ./chisel server --reverse --port 1234
 V: ./chisel client <your ip>:1234 R:2049:127.0.0.1:2049
 ```
 
-After we have access to NFS services we can make a mount in our machine from `/hame/james` directory as screenshot below.
+After we have access to NFS services we can make a mount in our machine from `/home/james` directory as screenshot below.
 
 ![15-mount](15-mount.png)
 
@@ -124,7 +124,7 @@ Into `/.ssh` directory we can see a id_rsa file, saving this private SSH key and
 
 ![16-idrsa](16-idrsa.png)
 
-Like `/hame/james` is configured as **no_root_squash**, then we can write inside that directory as if you were the local root of the machine. So let's upload a bash shell as root user. And changed his permission to SUID using `chmod` command.
+Like `/home/james` is configured as **no_root_squash**, then we can write inside that directory as if you were the local root of the machine. So let's upload a bash shell as root user. And changed his permission to SUID using `chmod` command.
 
 ![17-bash](17-bash.png)
 
