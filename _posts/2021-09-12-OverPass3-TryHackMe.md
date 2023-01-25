@@ -132,7 +132,7 @@ Now, the binary is with the SUID permission.
 
 ![18-ls](18-ls.png)
 
-For be root we have to exec the binary adding `-p` argument.
+To be root we have to exec the binary adding `-p` argument.
 
 ![19-suid](19-suid.png)
 
