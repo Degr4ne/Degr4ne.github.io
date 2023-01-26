@@ -3,7 +3,7 @@ title: Brainfuck - HackTheBox Walkthrough
 date: 2021-10-11 12:00:00 
 categories: [HackTheBox,Linux]
 tags: [wordpress,rsa,lxd]
-img_path: /assets/img/HTB/Brainfuck/
+img_path: /assets/img/HTB/BrainFuck/
 image: 
   path: 00-banner.png
 ---
