@@ -2,7 +2,7 @@
 title: Velentine - HackTheBox Walkthrough
 date: 2021-10-23 12:00:00 
 categories: [HackTheBox,Linux]
-tags: [heart bleed,dirtycow]
+tags: [heart bleed,dirtycow,tmux]
 img_path: /assets/img/HTB/Valentine/
 image: 
   path: 00-banner.png
