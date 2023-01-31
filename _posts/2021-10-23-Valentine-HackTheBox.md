@@ -1,5 +1,5 @@
 ---
-title: Velentine - HackTheBox Walkthrough
+title: Valentine - HackTheBox Walkthrough
 date: 2021-10-23 12:00:00 
 categories: [HackTheBox,Linux]
 tags: [heart bleed,dirtycow,tmux]
