@@ -2,7 +2,7 @@
 title: Active Directory - Basic Concepts
 date: 2023-02-18 12:00:00 
 categories: [Active Directory]
-tags: []
+tags: [active directory]
 img_path: /assets/img/AD/
 image: 
   path: 00-banner.png
